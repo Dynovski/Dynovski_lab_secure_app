@@ -19,5 +19,4 @@ jobs:
           docker pull mixeway/scanner:latest
       - name: Run Scan
         run: |
-          docker run -e MODE=STANDALONE -e OSS_USERNAME=a8gls1u28kj@interia.pl -e OSS_KEY=5015ed70d8bda91d89ea44ace83f15954338952 -v /opt/lab_sec_audit/sast:/opt/sources mixeway/scanner:latest
-
+          docker run -e OSS_USERNAME=a8gls1u28kj@interia.pl -e OSS_KEY=5015ed70d8bda91d89ea44ace83f15954338952 -e MIXEWAY_URL=https://hub.mixeway.io -e MIXEWAY_KEY=eaa25e0b-14cf-4fe4-ae70-f921c07629af -e MIXEWAY_PROJECT_ID=81 -e MODE=STANDALONE -e MIXEWAY_PROJECT_NAME=Dynovski_lab_secure_app -e COMMIT_ID=test -e BRANCH=master -v $(pwd):/opt/sources mixeway/scanner:latest
